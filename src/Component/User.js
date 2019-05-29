@@ -9,7 +9,18 @@ class User extends Component {
     render() {
         console.log(this.props)
         return (
-            <h1>User</h1>
+            <div>
+                <h1>User</h1>
+                <>
+                    {!this.props.loading && this.props.user.name ?
+                        <div>
+                            <h3>{this.props.user.name.first}</h3>
+                            <img src={this.props.user.picture.large} />
+                        </div>
+                        : (<div>Loading...</div>
+                        )}
+                </>
+            </div>
         )
     }
 }
